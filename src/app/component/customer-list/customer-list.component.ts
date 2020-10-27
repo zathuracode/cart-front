@@ -12,6 +12,9 @@ export class CustomerListComponent implements OnInit {
   public titulo:string='Lista de Clientes';
   public customers:Customer[];
 
+  public showMsg:boolean=false;
+  public messages:string[];
+
   constructor(public customerService:CustomerService) { }
 
   ngOnInit(): void {
@@ -23,6 +26,19 @@ export class CustomerListComponent implements OnInit {
         this.customers=data;
     },error=>{
         console.error(error);
+    });
+  }
+
+  public delete(email:string):void{
+    this.messages=[""];
+    this.customerService.delete(email).subscribe(ok=>{
+      this.showMsg=true;
+      this.messages[0]="El customer se borro con exito";
+      this.findAll();
+    },err=>{
+      console.log(err);
+      this.showMsg=true;
+      this.messages=err.error.error;
     });
   }
 

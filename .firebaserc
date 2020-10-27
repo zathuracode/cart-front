@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "cart-dagm": {
+      "hosting": {
+        "cart-front": [
+          "cart-dagm"
+        ]
+      }
+    }
+  }
+}
