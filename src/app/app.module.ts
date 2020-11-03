@@ -10,13 +10,15 @@ import { CustomerSaveComponent } from './component/customer-save/customer-save.c
 
 import { FormsModule } from '@angular/forms';
 import { CustomerEditComponent } from './component/customer-edit/customer-edit.component';
+import { LoginComponent } from './component/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerListComponent,
     CustomerSaveComponent,
-    CustomerEditComponent
+    CustomerEditComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -35,7 +35,6 @@ export class CustomerEditComponent implements OnInit {
   public findById():void{
     this.customerService.findById(this.email).subscribe(data=>{
       this.customer=data;
-      console.table(this.customer);
     });
   }
 
